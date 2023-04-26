@@ -20,4 +20,14 @@ async function proxymsg() {
         proxy_loading.innerHTML = proxy_messages[i];
         await sleep(1000);
     }
+    fake_forknight();
+}
+async function fake_forknight(){
+    async function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+    document.getElementById("fortnite-loading").classList.remove("hidden");
+    document.getElementById("fake-proxy").classList.add("hidden");
+    var fortnite_loading_image = '/fork.png';
+
 }

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>fortnite | aeroxy</title>
     <!--
@@ -26,11 +25,73 @@
            "You've been gnomed!" - GeorgeNotFound, 2021
                                             ^ satire, not true
     -->
+    <style>
+        #fake-proxy {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
+        #proxy-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        #fortnite-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            background-image: url(fork.png);
+            background-size: contain no-repeat;
+            background-position: center center;
+        }
+        #fortnite-loading-bar {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 400px;
+            height: 20px;
+            background-color: #fff;
+        }
+        #fortnite-loading-bar-fill {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-color: #000;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body onload="proxymsg()">
     <div id="fake-proxy">
         <div id="proxy-loading">
-            sus sus amogus sus s s
+            sus sus amogus sus
+        </div>
+    </div>
+    <div id="fortnite-loading" class="hidden">
+        <div id="fortnite-loading-bar">
+            <div id="fortnite-loading-bar-fill"></div>
         </div>
     </div>
 </body>
