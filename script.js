@@ -28,20 +28,33 @@ async function fake_forknight(){
     }
     document.getElementById("fortnite-loading").classList.remove("hidden");
     document.getElementById("fake-proxy").classList.add("hidden");
-    var i = 0;
-    if (i == 0) {
-        i = 1;
-        var elem = document.getElementById("fortnite-loading-bar-fill");
-        var width = 1;
-        var id = setInterval(frame, Math.floor(Math.random() * 50) + 1);
-        function frame() {
-            if (width >= 100) {
-                clearInterval(id);
-                i = 0;
-            } else {
-                width++;
-                elem.style.width = width + "%";
-            }
+    // loading bar
+    /*
+        <div id="fortnite-loading" class="hidden">
+        <img id="fortnite-image" src="/fork.png"/>
+        <div id="fortnite-logo">
+            <img src="logo.png" alt="image failed to load" width="40%" height="auto">
+        </div>
+        <div id="fortnite-loading-bar" class="fortnite-style">
+            <div id="fortnite-loading-bar-fill" class="fortnite-inner-style">
+                0%
+            </div>
+        </div>
+    </div>
+    */
+    var fortnite_loading_bar = document.getElementById("fortnite-loading-bar");
+    var fortnite_loading_bar_fill = document.getElementById("fortnite-loading-bar-fill");
+    var fortnite_loading_bar_fill_width = 0;
+    for (let i = 0; i < 100; i++) { // add some randomness and pauses to make it look more real
+        fortnite_loading_bar_fill_width += Math.floor(Math.random() * 10);
+        if (fortnite_loading_bar_fill_width >= 100) {
+            fortnite_loading_bar_fill.style.width = "98.5%";
+            fortnite_loading_bar_fill.innerHTML = "100%";
+            break;
         }
+        fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
+        fortnite_loading_bar_fill.innerHTML = fortnite_loading_bar_fill_width + "%";
+        await sleep(Math.floor(Math.random() * 100));
     }
+
 }

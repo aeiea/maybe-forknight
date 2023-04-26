@@ -60,7 +60,8 @@
             text-align: center;
         }
         #fortnite-image {
-            background-size: contain no-repeat;
+            background-size: contain;
+            background-repeat: no-repeat;
             background-position: center center;
             width: 100%;
             height: auto;
@@ -72,17 +73,19 @@
             top: 80%;
             left: 50%;
             transform: translate(-50%, -50%) skew(5deg);
-            width: 600px;
+            width: 800px;
             height: 30px;
-            padding: 2px;
+            padding: 1px;
             filter: blur(0.01px);
         }
         #fortnite-loading-bar-fill {
             top: 0;
             left: 0;
-            width: 1%;
-            transform: skew(-5deg);
+            width: 0%;
+            transform: skew(-10deg);
             margin: 5px;
+            transition: 120ms;
+            
         }
         .hidden {
             display: none;
@@ -104,6 +107,12 @@
             background: linear-gradient(#ede801, #fefb72);
             color: #343F65;
         }
+        center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 <body onload="fake_forknight()">
@@ -114,9 +123,9 @@
     </div>
     <div id="fortnite-loading" class="hidden">
         <img id="fortnite-image" src="/fork.png"/>
-        <div id="fortnite-logo">
-            <img src="logo.png" alt="image failed to load" width="40%" height="auto">
-        </div>
+        <center>
+            <img src="logo.png" alt="image failed to load" width="110%" height="auto" style="transform: translate(-4%,-40%)">
+        </center>
         <div id="fortnite-loading-bar" class="fortnite-style">
             <div id="fortnite-loading-bar-fill" class="fortnite-inner-style"></div>
         </div>
