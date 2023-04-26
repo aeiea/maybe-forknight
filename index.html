@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <title>fortnite | aeroxy</title>
     <!--
         Hello there, small child. Do you want some free candy?
@@ -60,26 +61,40 @@
             background-image: url(fork.png);
             background-size: contain no-repeat;
             background-position: center center;
+            filter: blur(10%);
         }
         #fortnite-loading-bar {
             position: absolute;
             top: 80%;
             left: 50%;
-            transform: translate(-50%, -50%);
-            width: 400px;
-            height: 20px;
-            background-color: #fff;
+            transform: translate(-50%, -50%) skew(5deg);
+            width: 600px;
+            height: 30px;
+            padding: 2px;
         }
         #fortnite-loading-bar-fill {
-            position: absolute;
             top: 0;
             left: 0;
-            width: 0%;
-            height: 100%;
-            background-color: #000;
+            width: 1%;
+            transform: skew(-5deg);
+            margin: 5px;
         }
         .hidden {
             display: none;
+        }
+        #fortnite-logo {
+            justify-content: center;
+            align-content: center;
+            flex: auto;
+        }
+        .fortnite-style {
+            background: linear-gradient(#fefb72, #fefca3);
+            font-family: 'Luckiest Guy';
+        }
+        
+        .fortnite-inner-style {
+            background: linear-gradient(#ede801, #fefb72);
+            color: #343F65;
         }
     </style>
 </head>
@@ -90,8 +105,11 @@
         </div>
     </div>
     <div id="fortnite-loading" class="hidden">
-        <div id="fortnite-loading-bar">
-            <div id="fortnite-loading-bar-fill"></div>
+        <div id="fortnite-logo">
+            <img src="logo.png" alt="image failed to load" width="40%" height="auto">
+        </div>
+        <div id="fortnite-loading-bar" class="fortnite-style">
+            <div id="fortnite-loading-bar-fill" class="fortnite-inner-style"></div>
         </div>
     </div>
 </body>
