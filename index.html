@@ -58,10 +58,14 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 16px;
             text-align: center;
-            background-image: url(fork.png);
+        }
+        #fortnite-image {
             background-size: contain no-repeat;
             background-position: center center;
-            filter: blur(10%);
+            width: 100%;
+            height: auto;
+            filter: blur(5px);
+            background-position: center;
         }
         #fortnite-loading-bar {
             position: absolute;
@@ -71,6 +75,7 @@
             width: 600px;
             height: 30px;
             padding: 2px;
+            filter: blur(0.01px);
         }
         #fortnite-loading-bar-fill {
             top: 0;
@@ -86,6 +91,7 @@
             justify-content: center;
             align-content: center;
             flex: auto;
+            filter: blur(.5px);
         }
         .fortnite-style {
             background: linear-gradient(#fefb72, #fefca3);
@@ -98,13 +104,14 @@
         }
     </style>
 </head>
-<body onload="proxymsg()">
+<body onload="fake_forknight()">
     <div id="fake-proxy">
         <div id="proxy-loading">
             sus sus amogus sus
         </div>
     </div>
     <div id="fortnite-loading" class="hidden">
+        <img id="fortnite-image" src="/fork.png"/>
         <div id="fortnite-logo">
             <img src="logo.png" alt="image failed to load" width="40%" height="auto">
         </div>
