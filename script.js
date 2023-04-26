@@ -33,9 +33,6 @@ async function fake_forknight(){
         <div id="fortnite-loading-bar" class="fortnite-style">
             <div id="fortnite-loading-bar-fill" class="fortnite-inner-style"></div>
         </div>
-        <div class="hidden" id="play-button">
-            <button class="fortnite-style" onclick="play_forknight()">Play</button>
-        </div>
     */
     var fortnite_loading_bar = document.getElementById("fortnite-loading-bar");
     var fortnite_loading_bar_fill = document.getElementById("fortnite-loading-bar-fill");
@@ -48,12 +45,12 @@ async function fake_forknight(){
             await sleep(1000);
             fortnite_loading_bar_fill.innerHTML = "Done!";
             await sleep(1000);
-            document.getElementById("play-button").classList.remove("hidden");
-            fortnite_loading_bar.classList.add("hidden");
+            // time to turn the loading bar to the play button
+            fortnite_loading_bar.classList.add("fortnite-style-play");
             break;
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
         fortnite_loading_bar_fill.innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 10));
+        await sleep(Math.floor(Math.random() * 100));
     }
 }
