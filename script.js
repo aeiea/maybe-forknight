@@ -30,17 +30,12 @@ async function fake_forknight(){
     document.getElementById("fake-proxy").classList.add("hidden");
     // loading bar
     /*
-        <div id="fortnite-loading" class="hidden">
-        <img id="fortnite-image" src="/fork.png"/>
-        <div id="fortnite-logo">
-            <img src="logo.png" alt="image failed to load" width="40%" height="auto">
-        </div>
         <div id="fortnite-loading-bar" class="fortnite-style">
-            <div id="fortnite-loading-bar-fill" class="fortnite-inner-style">
-                0%
-            </div>
+            <div id="fortnite-loading-bar-fill" class="fortnite-inner-style"></div>
         </div>
-    </div>
+        <div class="hidden" id="play-button">
+            <button class="fortnite-style" onclick="play_forknight()">Play</button>
+        </div>
     */
     var fortnite_loading_bar = document.getElementById("fortnite-loading-bar");
     var fortnite_loading_bar_fill = document.getElementById("fortnite-loading-bar-fill");
@@ -50,11 +45,15 @@ async function fake_forknight(){
         if (fortnite_loading_bar_fill_width >= 100) {
             fortnite_loading_bar_fill.style.width = "98.5%";
             fortnite_loading_bar_fill.innerHTML = "100%";
+            await sleep(1000);
+            fortnite_loading_bar_fill.innerHTML = "Done!";
+            await sleep(1000);
+            document.getElementById("play-button").classList.remove("hidden");
+            fortnite_loading_bar.classList.add("hidden");
             break;
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
         fortnite_loading_bar_fill.innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 100));
+        await sleep(Math.floor(Math.random() * 10));
     }
-
 }

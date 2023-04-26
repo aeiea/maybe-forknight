@@ -73,22 +73,27 @@
             top: 80%;
             left: 50%;
             transform: translate(-50%, -50%) skew(5deg);
-            width: 800px;
-            height: 30px;
+            width: 40%;
+            height: 2.5em;
             padding: 1px;
             filter: blur(0.01px);
+            display: flex;
+            align-content: center;
+            flex: auto;
         }
         #fortnite-loading-bar-fill {
             top: 0;
             left: 0;
             width: 0%;
-            transform: skew(-10deg);
             margin: 5px;
+            transform: skew(-10deg);
             transition: 120ms;
-            
+            box-shadow: #000 0px 0px 1px 0px;
         }
         .hidden {
             display: none;
+            width: 0;
+            height: 0;
         }
         #fortnite-logo {
             justify-content: center;
@@ -106,6 +111,8 @@
         .fortnite-inner-style {
             background: linear-gradient(#ede801, #fefb72);
             color: #343F65;
+            font-size: 120%;
+            font-weight: bold;
         }
         center {
             position: absolute;
@@ -122,12 +129,15 @@
         </div>
     </div>
     <div id="fortnite-loading" class="hidden">
-        <img id="fortnite-image" src="/fork.png"/>
+        <img id="fortnite-image" src="fork.png"/>
         <center>
-            <img src="logo.png" alt="image failed to load" width="110%" height="auto" style="transform: translate(-4%,-40%)">
+            <img src="logo.png" alt="image failed to load" width="110%" height="auto" style="transform: translate(-4%,-40%); filter:blur(1px)">
         </center>
         <div id="fortnite-loading-bar" class="fortnite-style">
             <div id="fortnite-loading-bar-fill" class="fortnite-inner-style"></div>
+        </div>
+        <div class="hidden fortnite-style" id="play-button">
+            <button class="fortnite-inner-style" onclick="play_forknight()">Play</button>
         </div>
     </div>
 </body>
