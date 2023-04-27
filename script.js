@@ -60,3 +60,6 @@ async function fake_forknight(){
         await sleep(Math.floor(Math.random() * 100));
     }
 }
+function get_rekt() {
+    alert("sus goofy ahh")
+}
