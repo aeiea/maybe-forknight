@@ -48,7 +48,7 @@ async function fake_forknight(){
             fortnite_loading_bar_fill.children[0].innerHTML = "Done!";
             await sleep(1000);
             // time to turn the loading bar to the play button
-            fortnite_loading_bar.setAttribute("onclick", "get_rekt()");
+            fortnite_loading_bar.setAttribute("onclick", "loading_user()");
             fortnite_loading_bar.style.width = "12%";
             fortnite_loading_bar.style.height = "10%";
             fortnite_loading_bar.style.fontSize = "1.5em";
@@ -57,14 +57,12 @@ async function fake_forknight(){
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
         fortnite_loading_bar_fill.children[0].innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 1400));
+        await sleep(Math.floor(Math.random() * 14));
     }
 }
+function loading_user() {
+    document.getElementById('fortnite-loading').classList.add("hidden");
+}
 function get_rekt() {
-    alert("sus goofy ahh")
-    var catfacts = new XMLHttpRequest();
-    catfacts.open("GET", "https://catfact.ninja/fact");
-    catfacts.onload = function() {
-        document.getElementById("catfact").innerHTML = JSON.parse(this.response)["fact"];
-    }
+    alert("sus goofy ahh")    
 }
