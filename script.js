@@ -7,12 +7,14 @@ async function proxymsg() {
         "loading proxy..",
         "loading proxy...",
         "proxy loaded.",
-        "proxy loaded..",
-        "proxy loaded...",
         "requesting connection.",
         "requesting connection..",
         "requesting connection...",
-        "connection requested.",
+        "connection request successful.",
+        "loading video feed.",
+        "loading video feed..",
+        "loading video feed...",
+        "loaded video feed.",
         "done."
     ];
     var proxy_loading = document.getElementById("proxy-loading");
@@ -41,18 +43,20 @@ async function fake_forknight(){
         fortnite_loading_bar_fill_width += Math.floor(Math.random() * 10);
         if (fortnite_loading_bar_fill_width >= 100) {
             fortnite_loading_bar_fill.style.width = "98.5%";
-            fortnite_loading_bar_fill.innerHTML = "100%";
+            fortnite_loading_bar_fill.children[0].innerHTML = "100%";
             await sleep(1000);
-            fortnite_loading_bar_fill.innerHTML = "Done!";
+            fortnite_loading_bar_fill.children[0].innerHTML = "Done!";
             await sleep(1000);
             // time to turn the loading bar to the play button
-            // fortnite_loading_bar.classList.add("fortnite-style-play");
-            // fortnite_loading_bar.attributes.removeNamedItem("id");
-            // fortnite_loading_bar.attributes.setNamedItem(document.createAttribute("id")).value = "fortnite-play-button";
+            fortnite_loading_bar.setAttribute("onclick", "get_rekt()");
+            fortnite_loading_bar.style.width = "12%";
+            fortnite_loading_bar.style.height = "10%";
+            fortnite_loading_bar.style.fontSize = "1.5em";
+            fortnite_loading_bar_fill.children[0].innerHTML = "Play!";
             break;
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
-        fortnite_loading_bar_fill.innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 1400));
+        fortnite_loading_bar_fill.children[0].innerHTML = fortnite_loading_bar_fill_width + "%";
+        await sleep(Math.floor(Math.random() * 100));
     }
 }
