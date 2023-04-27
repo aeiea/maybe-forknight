@@ -46,9 +46,9 @@ async function fake_forknight(){
             fortnite_loading_bar_fill.innerHTML = "Done!";
             await sleep(1000);
             // time to turn the loading bar to the play button
-            fortnite_loading_bar.classList.add("fortnite-style-play");
-            fortnite_loading_bar.attributes.removeNamedItem("id");
-            fortnite_loading_bar.attributes.setNamedItem(document.createAttribute("id")).value = "fortnite-play-button";
+            // fortnite_loading_bar.classList.add("fortnite-style-play");
+            // fortnite_loading_bar.attributes.removeNamedItem("id");
+            // fortnite_loading_bar.attributes.setNamedItem(document.createAttribute("id")).value = "fortnite-play-button";
             break;
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
