@@ -57,7 +57,7 @@ async function fake_forknight(){
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
         fortnite_loading_bar_fill.children[0].innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 100));
+        await sleep(Math.floor(Math.random() * 1000));
     }
 }
 function get_rekt() {
