@@ -40,7 +40,7 @@ async function fake_forknight(){
     var fortnite_loading_bar_fill = document.getElementById("fortnite-loading-bar-fill");
     var fortnite_loading_bar_fill_width = 0;
     for (let i = 0; i < 100; i++) { // add some randomness and pauses to make it look more real
-        fortnite_loading_bar_fill_width += Math.floor(Math.random() * 10);
+        fortnite_loading_bar_fill_width += Math.floor(Math.random() * 5);
         if (fortnite_loading_bar_fill_width >= 100) {
             fortnite_loading_bar_fill.style.width = "98.5%";
             fortnite_loading_bar_fill.children[0].innerHTML = "100%";
@@ -57,7 +57,7 @@ async function fake_forknight(){
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
         fortnite_loading_bar_fill.children[0].innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 14));
+        await sleep(Math.floor(Math.random() * 1000));
     }
 }
 function loading_user() {
