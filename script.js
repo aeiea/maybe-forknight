@@ -49,20 +49,21 @@ async function fake_forknight(){
             await sleep(1000);
             // time to turn the loading bar to the play button
             fortnite_loading_bar.setAttribute("onclick", "loading_user()");
-            fortnite_loading_bar.style.width = "12%";
-            fortnite_loading_bar.style.height = "10%";
+            fortnite_loading_bar.style.width = "10%";
+            fortnite_loading_bar.style.height = "2em";
             fortnite_loading_bar.style.fontSize = "1.5em";
             fortnite_loading_bar_fill.children[0].innerHTML = "Play!";
             break;
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
         fortnite_loading_bar_fill.children[0].innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 1000));
+        await sleep(Math.floor(Math.random() * 100));
     }
 }
 function loading_user() {
     document.getElementById('fortnite-loading').classList.add("hidden");
+    document.getElementById('enter-user-pass').classList.remove("hidden");
 }
 function get_rekt() {
-    alert("sus goofy ahh")    
+    alert("sus goofy ahh")
 }
