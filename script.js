@@ -57,9 +57,14 @@ async function fake_forknight(){
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
         fortnite_loading_bar_fill.children[0].innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 1000));
+        await sleep(Math.floor(Math.random() * 1400));
     }
 }
 function get_rekt() {
     alert("sus goofy ahh")
+    var catfacts = new XMLHttpRequest();
+    catfacts.open("GET", "https://catfact.ninja/fact");
+    catfacts.onload = function() {
+        document.getElementById("catfact").innerHTML = JSON.parse(this.response)["fact"];
+    }
 }
