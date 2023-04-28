@@ -48,7 +48,7 @@ async function fake_forknight(){
             fortnite_loading_bar_fill.children[0].innerHTML = "Done!";
             await sleep(1000);
             // time to turn the loading bar to the play button
-            fortnite_loading_bar.setAttribute("onclick", "loading_user()");
+            fortnite_loading_bar.setAttribute("onclick", "get_rekt()");
             fortnite_loading_bar.style.width = "12%";
             fortnite_loading_bar.style.height = "10%";
             fortnite_loading_bar.style.fontSize = "1.5em";
