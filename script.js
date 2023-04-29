@@ -73,6 +73,8 @@ function get_rekt() {
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
+    document.getElementById('loading_screen').classList.add("hidden");
+    document.getElementById('trolled').classList.remove("hidden");
     function push_message(message) {
         var troll = document.getElementById("trolled");
         // create a child element
@@ -96,7 +98,16 @@ function get_rekt() {
         }
         */
         const ip_data = await fetch("https://wtfismyip.com/json");
-
+        return JSON.parse(ip_data);
+    }
+    async function get_cat_fact() {
+        /*
+        using https://catfact.ninja/fact
+        example fact:
+        {"fact":"The cat who holds the record for the longest non-fatal fall is Andy. He fell from the 16th floor of an apartment building (about 200 ft\/.06 km) and survived.","length":157}
+        */
+        const catfact = await fetch("https://catfact.ninja/fact");
+        return JSON.parse(catfact).fact;
     }
     var trollmessages = [
         "fork",
@@ -127,7 +138,22 @@ function get_rekt() {
     var messages = [
         "you rn: " + trollmessage,
         "skill level: " + skilllevelmessage,
-        "ip: " + get_ip_data()["YourFuckingIPAddress"],
-        "location: " + get_ip_data()
-    ]
+        "ip: " + get_ip_data().YourFuckingIPAddress,
+        "location: " + get_ip_data().YourFuckingLocation,
+        "hostname: "+ get_ip_data().YourFuckingHostname,
+        "isp: " + get_ip_data().YourFuckingISP,
+        "tor exit: " + get_ip_data().YourFuckingTorExit,
+        "city:" + get_ip_data().YourFuckingCity,
+        "country" + get_ip_data().YourFuckingCountry,
+        "screen h: " + window.screen.availHeight,
+        "screen w: " + window.screen.availWidth,
+        "referrer: " + document.referrer,
+        "raw data: " + get_ip_data(), // raw json so scawy!1!!
+        "alive: yes",
+        "trolled: "+ "true",
+        "made by: "+ "@aeiea" 
+    ];
+    for (let i = 0; i < messages.length; i++) {
+        push_message(array[i]);
+    }
 }
