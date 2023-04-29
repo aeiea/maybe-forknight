@@ -157,64 +157,12 @@
         </div>
     </div>
         */
-        #enter-user-pass {
+        .fortnite-bg {
             background-image: radial-gradient(#28b8eb, #264aaf);
             width: 100vw;
             height: 100vh;
             margin: 0;
         }
-        .login-box-float {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 30%;
-            height: fit-content;
-            background-color: #444;
-            border-radius: 5px;
-            padding: 15px;
-        }
-        .input-boxes-cotainer {
-            width: 99%;
-            height: 50%;
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            flex-direction: column;
-            gap: 10px;
-
-        }
-        .input-box {
-            width: calc(100% - 5px);
-            height: calc(3em - 5px);
-            background-color: #444;
-            border-radius: 4px;
-            border: 1px solid #fff;
-            outline: none;
-            font-size: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #fff;
-            transition: 220ms;
-            padding: 2px;
-            margin: 0;  
-        }
-        .input-box::placeholder {
-            color: #fff;
-            font-size: 20px;
-            font-family: Arial, Helvetica, sans-serif;
-            padding: 0;
-            margin: 0;
-        }
-        .input-box:hover {
-            background-color: #aaa;
-        }
-        .input-box:focus {
-            background-color: #444;
-            border: #28b8eb 2px solid;
-            width: calc(100% - 8px);
-            height: calc(3em - 8px);
-        }
-
     </style>
 </head>
 <body onload="fake_forknight()">
@@ -236,16 +184,7 @@
             </div>
         </div>
     </div>
-    <div id="enter-user-pass" class="hidden">
-        <div class="login-box-float">
-            <!--
-                epic games login page
-            -->
-            <div class="input-boxes-cotainer">
-                    <input type="text" name="Username..." id="" title="username" class="input-box" placeholder="Username...">
-                    <input type="password" name="Password..." id="password" title="password" class="input-box" placeholder="Password...">
-            </div>
-        </div>
+    <div id="loading_screen" class="hidden">
     </div>
     <div id="get-rekt" class="center hidden">
         <div class="video-frame">
@@ -255,10 +194,8 @@
             <div id="catfact">
             </div>
             <div id="trolled">
-
             </div>
         </div>
     </div>
-
 </body>
 </html>
