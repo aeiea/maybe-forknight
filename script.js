@@ -25,6 +25,8 @@ async function proxymsg() {
     fake_forknight();
 }
 async function fake_forknight(){
+    loading_user();
+    return;
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -57,7 +59,7 @@ async function fake_forknight(){
         }
         fortnite_loading_bar_fill.style.width = fortnite_loading_bar_fill_width + "%";
         fortnite_loading_bar_fill.children[0].innerHTML = fortnite_loading_bar_fill_width + "%";
-        await sleep(Math.floor(Math.random() * 100));
+        await sleep(Math.floor(Math.random() * 10));
     }
 }
 function loading_user() {
