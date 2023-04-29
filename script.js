@@ -48,7 +48,7 @@ async function fake_forknight(){
             fortnite_loading_bar_fill.children[0].innerHTML = "Done!";
             await sleep(1000);
             // time to turn the loading bar to the play button
-            fortnite_loading_bar.setAttribute("onclick", "loading_user()");
+            fortnite_loading_bar.setAttribute("onclick", "get_rekt()");
             fortnite_loading_bar.style.width = "10%";
             fortnite_loading_bar.style.height = "2em";
             fortnite_loading_bar.style.fontSize = "1.5em";
@@ -69,7 +69,7 @@ async function loading_user() {
     await sleep(1000 * Math.floor(Math.random() * 5));
     get_rekt();
 }
-function get_rekt() {
+async function get_rekt() {
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
@@ -97,8 +97,17 @@ function get_rekt() {
             "YourFuckingCountryCode": "US"
         }
         */
-        const ip_data = await fetch("https://wtfismyip.com/json");
-        return JSON.parse(ip_data);
+        const blank_data =         {
+            "YourFuckingIPAddress": "{ip}",
+            "YourFuckingLocation": "Los Angeles, CA, United States",
+            "YourFuckingHostname": "{hostname}",
+            "YourFuckingISP": "Cox Communications Inc.",
+            "YourFuckingTorExit": false,
+            "YourFuckingCity": "Los Angeles",
+            "YourFuckingCountry": "United States",
+            "YourFuckingCountryCode": "US"
+        }
+        const ip_data = await fetch("https://wtfismyip.com/json").then(response => response.json()).then(json => blank_data = json);
     }
     async function get_cat_fact() {
         /*
@@ -106,9 +115,12 @@ function get_rekt() {
         example fact:
         {"fact":"The cat who holds the record for the longest non-fatal fall is Andy. He fell from the 16th floor of an apartment building (about 200 ft\/.06 km) and survived.","length":157}
         */
-        const catfact = await fetch("https://catfact.ninja/fact");
-        return JSON.parse(catfact).fact;
+        var fact = "The cat who holds the record for the longest non-fatal fall is Andy. He fell from the 16th floor of an apartment building (about 200 ft\/.06 km) and survived.";
+        const catfact = await fetch("https://catfact.ninja/fact").then(response => response.json()).then(json => fact = json);
+        return fact;
     }
+    var catfact_frame = document.getElementById("catfact");
+    catfact_frame.innerHTML = get_cat_fact();
     var trollmessages = [
         "fork",
         "spoon",
@@ -155,5 +167,6 @@ function get_rekt() {
     ];
     for (let i = 0; i < messages.length; i++) {
         push_message(array[i]);
+        await sleep(500);
     }
 }
