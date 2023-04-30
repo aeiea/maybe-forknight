@@ -125,6 +125,7 @@
         .fortnite-style {
             background: linear-gradient(#fefb72, #fefca3);
             font-family: 'Luckiest Guy';
+            cursor: pointer;
         }
         
         .fortnite-inner-style {
@@ -139,13 +140,42 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-        .fortnite-style-play {
-            background: linear-gradient(#93ff00, #ffff00);
-            font-family: 'Luckiest Guy';
-            width: 7em;
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
         }
-        #enter-user-pass {
-            background-image: radial-gradient(#3333ff, #000066);
+        .fortnite-bg {
+            background-image: radial-gradient(#28b8eb, #264aaf);
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+        }
+        #trolled {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+        video {
+            filter: blur(2px);
+            z-index: -100;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%);
+            position: absolute;
+        }
+        #trolled, #catfact {
+            font-family: 'Luckiest Guy';
+            font-size: .75em;
+            line-height: 1em;
+            color: #fff;
+            text-shadow: 0 0 10px #000;
+            z-index: 100;
+            text-align: center;
+            position: absolute;
+            top: 0%;
         }
     </style>
 </head>
@@ -168,24 +198,18 @@
             </div>
         </div>
     </div>
-    <div id="enter-user-pass">
-        <div class="input-box">
-            <input type="text" name="" id="">
-        </div>
-        <div></div>
+    <div id="loading_screen" class="hidden">
     </div>
-    <div id="get-rekt" class="center hidden">
+    <div id="trolled" class="hidden">
         <div class="video-frame">
-            <video src=""></video>
+            <video src="video.mp4" width="100vw" height="100vh"></video>
         </div>
         <div>
             <div id="catfact">
             </div>
             <div id="trolled">
-
             </div>
         </div>
     </div>
-
 </body>
 </html>
