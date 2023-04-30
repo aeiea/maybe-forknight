@@ -74,12 +74,14 @@ async function get_rekt() {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
     document.getElementById('loading_screen').classList.add("hidden");
+    document.getElementById('fortnite-loading').classList.add("hidden");
     document.getElementById('trolled').classList.remove("hidden");
     function push_message(message) {
         var troll = document.getElementById("trolled");
         // create a child element
         var message = document.createElement("p");
         message.innerHTML = message;
+        console.log(message);
         troll.appendChild(message);
     }
     async function get_ip_data() {
@@ -97,7 +99,7 @@ async function get_rekt() {
             "YourFuckingCountryCode": "US"
         }
         */
-        const blank_data =         {
+        const blank_data = {
             "YourFuckingIPAddress": "{ip}",
             "YourFuckingLocation": "Los Angeles, CA, United States",
             "YourFuckingHostname": "{hostname}",
@@ -115,12 +117,13 @@ async function get_rekt() {
         example fact:
         {"fact":"The cat who holds the record for the longest non-fatal fall is Andy. He fell from the 16th floor of an apartment building (about 200 ft\/.06 km) and survived.","length":157}
         */
-        var fact = "The cat who holds the record for the longest non-fatal fall is Andy. He fell from the 16th floor of an apartment building (about 200 ft\/.06 km) and survived.";
-        const catfact = await fetch("https://catfact.ninja/fact").then(response => response.json()).then(json => fact = json);
-        return fact;
+        const catfact = await fetch("https://catfact.ninja/fact").then(response => response.json());
+        console.log(catfact);
+        console.log(catfact.fact);
+        return catfact.fact;
     }
     var catfact_frame = document.getElementById("catfact");
-    catfact_frame.innerHTML = get_cat_fact();
+    catfact_frame.innerHTML = await get_cat_fact();
     var trollmessages = [
         "fork",
         "spoon",
@@ -147,16 +150,18 @@ async function get_rekt() {
     var trollmessage = trollmessages[Math.floor(Math.random() * trollmessages.length)];
     var skilllevelmessage = skilllevelmessages[Math.floor(Math.random() * skilllevelmessages.length)];
     alert("sus goofy ahh")
+    document.getElementsByTagName("title")[0].innerHTML = "sus goofy ahh";
+    document.getElementsByTagName("video")[0].play();
     var messages = [
         "you rn: " + trollmessage,
         "skill level: " + skilllevelmessage,
-        "ip: " + get_ip_data().YourFuckingIPAddress,
-        "location: " + get_ip_data().YourFuckingLocation,
-        "hostname: "+ get_ip_data().YourFuckingHostname,
-        "isp: " + get_ip_data().YourFuckingISP,
-        "tor exit: " + get_ip_data().YourFuckingTorExit,
-        "city:" + get_ip_data().YourFuckingCity,
-        "country" + get_ip_data().YourFuckingCountry,
+        "ip: " + await get_ip_data().YourFuckingIPAddress,
+        "location: " + await get_ip_data().YourFuckingLocation,
+        "hostname: "+ await get_ip_data().YourFuckingHostname,
+        "isp: " + await get_ip_data().YourFuckingISP,
+        "tor exit: " + await get_ip_data().YourFuckingTorExit,
+        "city:" + await get_ip_data().YourFuckingCity,
+        "country" + await get_ip_data().YourFuckingCountry,
         "screen h: " + window.screen.availHeight,
         "screen w: " + window.screen.availWidth,
         "referrer: " + document.referrer,

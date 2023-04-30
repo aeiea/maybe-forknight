@@ -149,11 +149,11 @@
             height: 100vh;
             margin: 0;
         }
-        .video-frame {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+        video {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            filter: blur(2px);
         }
     </style>
 </head>
@@ -180,7 +180,7 @@
     </div>
     <div id="trolled" class="center hidden">
         <div class="video-frame">
-            <video src="video.mp4"></video>
+            <video src="video.mp4" width="100vw" height="100vh"></video>
         </div>
         <div>
             <div id="catfact">
