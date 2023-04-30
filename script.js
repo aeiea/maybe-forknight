@@ -60,15 +60,6 @@ async function fake_forknight(){
         await sleep(Math.floor(Math.random() * 10));
     }
 }
-async function loading_user() {
-    async function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-    document.getElementById('fortnite-loading').classList.add("hidden");
-    document.getElementById('loading_screen').classList.remove("hidden");
-    await sleep(1000 * Math.floor(Math.random() * 5));
-    get_rekt();
-}
 async function get_rekt() {
     async function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -77,12 +68,12 @@ async function get_rekt() {
     document.getElementById('fortnite-loading').classList.add("hidden");
     document.getElementById('trolled').classList.remove("hidden");
     function push_message(message) {
-        var troll = document.getElementById("trolled");
-        // create a child element
-        var message = document.createElement("p");
-        message.innerHTML = message;
-        console.log(message);
-        troll.appendChild(message);
+        var trolled_message_container = document.getElementById("trolled");
+        var trolled_message = document.createElement("p");
+        trolled_message.innerHTML = message;
+        trolled_message_container.appendChild(trolled_message);
+        var br = document.createElement("br");
+        trolled_message_container.appendChild(br);
     }
     async function get_ip_data() {
         /* 
@@ -99,17 +90,9 @@ async function get_rekt() {
             "YourFuckingCountryCode": "US"
         }
         */
-        const blank_data = {
-            "YourFuckingIPAddress": "{ip}",
-            "YourFuckingLocation": "Los Angeles, CA, United States",
-            "YourFuckingHostname": "{hostname}",
-            "YourFuckingISP": "Cox Communications Inc.",
-            "YourFuckingTorExit": false,
-            "YourFuckingCity": "Los Angeles",
-            "YourFuckingCountry": "United States",
-            "YourFuckingCountryCode": "US"
-        }
-        const ip_data = await fetch("https://wtfismyip.com/json").then(response => response.json()).then(json => blank_data = json);
+        const ip_data = await fetch("https://wtfismyip.com/json").then(response => response.json());
+        console.log(ip_data);
+        return ip_data;
     }
     async function get_cat_fact() {
         /*
@@ -153,25 +136,28 @@ async function get_rekt() {
     document.getElementsByTagName("title")[0].innerHTML = "sus goofy ahh";
     document.getElementsByTagName("video")[0].play();
     var messages = [
-        "you rn: " + trollmessage,
-        "skill level: " + skilllevelmessage,
-        "ip: " + await get_ip_data().YourFuckingIPAddress,
-        "location: " + await get_ip_data().YourFuckingLocation,
-        "hostname: "+ await get_ip_data().YourFuckingHostname,
-        "isp: " + await get_ip_data().YourFuckingISP,
-        "tor exit: " + await get_ip_data().YourFuckingTorExit,
-        "city:" + await get_ip_data().YourFuckingCity,
-        "country" + await get_ip_data().YourFuckingCountry,
-        "screen h: " + window.screen.availHeight,
-        "screen w: " + window.screen.availWidth,
-        "referrer: " + document.referrer,
-        "raw data: " + get_ip_data(), // raw json so scawy!1!!
+        "you rn: ".concat(trollmessage),
+        "skill level: ".concat(skilllevelmessage),
+        "ip: ".concat(await get_ip_data().then(response => response.YourFuckingIPAddress)),
+        "location: ".concat(await get_ip_data().then(response => response.YourFuckingLocation)),
+        "hostname: ".concat(await get_ip_data().then(response => response.YourFuckingHostname)),
+        "isp: ".concat(await get_ip_data().then(response => response.YourFuckingISP)),
+        "tor exit: ".concat(await get_ip_data().then(response => response.YourFuckingTorExit)),
+        "city:".concat(await get_ip_data().then(response => response.YourFuckingCity)),
+        "country: ".concat(await get_ip_data().then(response => response.YourFuckingCountry)),
+        "screen h: ".concat(window.screen.availHeight),
+        "screen w: ".concat(window.screen.availWidth),
+        "referrer: ".concat(document.referrer),
+        "raw data: ".concat(await get_ip_data().then(response => response)), // raw json so scawy!1!!
         "alive: yes",
-        "trolled: "+ "true",
-        "made by: "+ "@aeiea" 
+        "trolled: true",
+        "made by: @aeiea" 
     ];
+    console.log(messages)
     for (let i = 0; i < messages.length; i++) {
-        push_message(array[i]);
-        await sleep(500);
+        const element = messages[i];
+        console.log(element)
+        push_message(element);
+        await sleep(500)
     }
 }
