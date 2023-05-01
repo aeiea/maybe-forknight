@@ -66,7 +66,7 @@ async function get_rekt() {
     }
     document.getElementById('loading_screen').classList.add("hidden");
     document.getElementById('fortnite-loading').classList.add("hidden");
-    document.getElementById('trolled').classList.remove("hidden");
+    document.getElementById('trolled_lol').classList.remove("hidden");
     function push_message(message) {
         var trolled_message_container = document.getElementById("trolled");
         var trolled_message = document.createElement("p");
