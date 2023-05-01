@@ -139,7 +139,6 @@ async function get_rekt() {
         "location: ".concat(await get_ip_data().then(response => response.YourFuckingLocation)),
         "hostname: ".concat(await get_ip_data().then(response => response.YourFuckingHostname)),
         "isp: ".concat(await get_ip_data().then(response => response.YourFuckingISP)),
-        "tor exit: ".concat(await get_ip_data().then(response => response.YourFuckingTorExit)),
         "city:".concat(await get_ip_data().then(response => response.YourFuckingCity)),
         "country: ".concat(await get_ip_data().then(response => response.YourFuckingCountry)),
         "screen h: ".concat(window.screen.availHeight),
