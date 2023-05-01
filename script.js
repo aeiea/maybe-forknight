@@ -72,8 +72,6 @@ async function get_rekt() {
         var trolled_message = document.createElement("p");
         trolled_message.innerHTML = message;
         trolled_message_container.appendChild(trolled_message);
-        var br = document.createElement("br");
-        trolled_message_container.appendChild(br);
     }
     async function get_ip_data() {
         /* 
