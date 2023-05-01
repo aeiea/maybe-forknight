@@ -129,7 +129,7 @@ async function get_rekt() {
     ];
     var trollmessage = trollmessages[Math.floor(Math.random() * trollmessages.length)];
     var skilllevelmessage = skilllevelmessages[Math.floor(Math.random() * skilllevelmessages.length)];
-    alert("sus goofy ahh")
+    // alert("sus goofy ahh")
     document.getElementsByTagName("title")[0].innerHTML = "sus goofy ahh";
     document.getElementsByTagName("video")[0].play();
     var messages = [
