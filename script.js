@@ -144,8 +144,7 @@ async function get_rekt() {
         "screen h: ".concat(window.screen.availHeight),
         "screen w: ".concat(window.screen.availWidth),
         "referrer: ".concat(document.referrer),
-        "raw data: ".concat(await get_ip_data().then(response => response)), // raw json so scawy!1!!
-        "alive: yes",
+        "raw data: ".concat(await get_ip_data().then(response => JSON.stringify(response))), // raw json so scawy!1!!
         "trolled: true",
         "made by: @aeiea" 
     ];
