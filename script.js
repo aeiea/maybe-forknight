@@ -103,8 +103,7 @@ async function get_rekt() {
         console.log(catfact.fact);
         return catfact.fact;
     }
-    var catfact_frame = document.getElementById("catfact");
-    catfact_frame.innerHTML = await get_cat_fact();
+    push_message(await get_cat_fact());
     var trollmessages = [
         "fork",
         "spoon",
