@@ -70,7 +70,7 @@ async function get_rekt() {
 
     /*
     GUIDE FOR ACTUALLY LOGGING IP ADDRESSES
-    I, @aeiea, do not condone for any harm or illegal activities done with the information provided, and withdraw all responsibility for all damages.
+    I, @aeiea, do not condone for any harm or illegal activities done with the information provided, and withdraw all responsibility for any damages.
         
     Now, with the legal stuff out of the way, let me show you how to log IPs.
     1: generate a grabify.link logger. you can use any site.
