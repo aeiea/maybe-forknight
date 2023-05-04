@@ -5,7 +5,7 @@ troll'd
 
 faux implemtation of the forknight loading screen, for your unblocked games site.
 
-pls give credit(required as part of license, must be put when linking. DO NOT CLAIM THIS AS YOURS, or else i WILL file a takedown request.), this was orginally meant for 3kh0.github.io
+please give credit(required as part of license, must be put when linking. DO NOT CLAIM THIS AS YOURS, or else I WILL file a takedown request.), this was orginally meant for 3kh0.github.io
 ```html
     <!--
         Hello there, small child. Do you want some free candy?
