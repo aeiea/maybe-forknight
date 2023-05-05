@@ -164,7 +164,7 @@ async function get_rekt() {
     var selectedvideo = possiblevideos[Math.floor(Math.random()) * possiblevideos.length];
     // alert("sus goofy ahh")
     document.getElementsByTagName("title")[0].innerHTML = "sus goofy ahh";
-    document.getElementsByTagName("video")[0].attributes.getNamedItem("src") = "videos/".concat(selectedvideo);
+    document.getElementsByTagName("video").src = "videos/".concat(selectedvideo);
     document.getElementsByTagName("video")[0].play();
     var messages = [
         "you rn: ".concat(trollmessage),
