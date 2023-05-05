@@ -30,12 +30,6 @@ async function fake_forknight(){
     }
     document.getElementById("fortnite-loading").classList.remove("hidden");
     document.getElementById("fake-proxy").classList.add("hidden");
-    // loading bar
-    /*
-        <div id="fortnite-loading-bar" class="fortnite-style">
-            <div id="fortnite-loading-bar-fill" class="fortnite-inner-style"></div>
-        </div>
-    */
     var fortnite_loading_bar = document.getElementById("fortnite-loading-bar");
     var fortnite_loading_bar_fill = document.getElementById("fortnite-loading-bar-fill");
     var fortnite_loading_bar_fill_width = 0;
@@ -157,7 +151,8 @@ async function get_rekt() {
         "finland.webm",
         "pee.mp4",
         "pop.mp4",
-        "video.mp4"
+        "video.mp4",
+        "bigguy.mp4"
     ];
     var trollmessage = trollmessages[Math.floor(Math.random() * trollmessages.length)];
     var skilllevelmessage = skilllevelmessages[Math.floor(Math.random() * skilllevelmessages.length)];
