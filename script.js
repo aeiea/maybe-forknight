@@ -96,6 +96,7 @@ async function get_rekt() {
         trolled_message.innerHTML = message;
         trolled_message_container.appendChild(trolled_message);
     }
+    
     async function get_ip_data() {
         /* 
         using wtfismyip.com
@@ -151,10 +152,19 @@ async function get_rekt() {
         "ea game enjoyer",
         "iM a DeVeLoPeR dAd BuY mE gItHuB pReMiUm"
     ];
+    var possiblevideos = [
+        "bowser.mp4",
+        "finland.webm",
+        "pee.mp4",
+        "pop.mp4",
+        "video.mp4"
+    ];
     var trollmessage = trollmessages[Math.floor(Math.random() * trollmessages.length)];
     var skilllevelmessage = skilllevelmessages[Math.floor(Math.random() * skilllevelmessages.length)];
+    var selectedvideo = possiblevideos[Math.floor(Math.random()) * possiblevideos.length];
     // alert("sus goofy ahh")
     document.getElementsByTagName("title")[0].innerHTML = "sus goofy ahh";
+    document.getElementsByTagName("video")[0].attributes.getNamedItem("src") = "videos/".concat(selectedvideo);
     document.getElementsByTagName("video")[0].play();
     var messages = [
         "you rn: ".concat(trollmessage),
