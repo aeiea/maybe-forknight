@@ -1,7 +1,7 @@
+async function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 async function proxymsg() {
-    async function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
     var proxy_messages = [
         "loading proxy.",
         "loading proxy..",
@@ -25,9 +25,6 @@ async function proxymsg() {
     fake_forknight();
 }
 async function fake_forknight(){
-    async function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
     document.getElementById("fortnite-loading").classList.remove("hidden");
     document.getElementById("fake-proxy").classList.add("hidden");
     var fortnite_loading_bar = document.getElementById("fortnite-loading-bar");
@@ -55,9 +52,6 @@ async function fake_forknight(){
     }
 }
 async function get_rekt() {
-    async function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
     document.getElementById('loading_screen').classList.add("hidden");
     document.getElementById('fortnite-loading').classList.add("hidden");
     document.getElementById('trolled_lol').classList.remove("hidden");
@@ -146,14 +140,7 @@ async function get_rekt() {
         "ea game enjoyer",
         "iM a DeVeLoPeR dAd BuY mE gItHuB pReMiUm"
     ];
-    var possiblevideos = [
-        "bowser.mp4",
-        "finland.webm",
-        "pee.mp4",
-        "pop.mp4",
-        "video.mp4",
-        "bigguy.mp4"
-    ];
+    var possiblevideos = ["axolotl.mp4", "bigguy.mp4", "bowser.mp4", "cinder.mp4", "dude.mp4", "family.mp4", "finland.webm", "gary.mp4", "iceberg.mp4", "jeebus.mov", "lego.mov", "murder.mp4", "pee.mp4", "penguin.mp4", "perky.mov", "piano.mp4", "pipe.mov", "pop.mp4", "roblonk.mp4", "shampoo.mov", "sus.mp4", "ups.mp4", "video.mp4", "yoshi.mp4"]
     var trollmessage = trollmessages[Math.floor(Math.random() * trollmessages.length)];
     var skilllevelmessage = skilllevelmessages[Math.floor(Math.random() * skilllevelmessages.length)];
     var selectedvideo = possiblevideos[Math.floor(Math.random() * possiblevideos.length)];
