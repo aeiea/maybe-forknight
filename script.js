@@ -55,7 +55,9 @@ async function get_rekt() {
     document.getElementById('loading_screen').classList.add("hidden");
     document.getElementById('fortnite-loading').classList.add("hidden");
     document.getElementById('trolled_lol').classList.remove("hidden");
-
+    var possiblevideos = await fetch('/videos.txt').then(result => result.replace("['").replace("']", '').split("', '"));
+    var selectedvideo = possiblevideos[Math.floor(Math.random() * possiblevideos.length)];
+    document.getElementsByTagName("video")[0].src = "videos/" + selectedvideo;
     /*
     GUIDE FOR ACTUALLY LOGGING IP ADDRESSES
     I, @aeiea, do not condone for any harm or illegal activities done with the information provided, and withdraw all responsibility for any damages.
@@ -140,13 +142,10 @@ async function get_rekt() {
         "ea game enjoyer",
         "iM a DeVeLoPeR dAd BuY mE gItHuB pReMiUm"
     ];
-    var possiblevideos = ["axolotl.mp4", "bigguy.mp4", "bowser.mp4", "cinder.mp4", "dude.mp4", "family.mp4", "finland.webm", "gary.mp4", "iceberg.mp4", "jeebus.mov", "lego.mov", "murder.mp4", "pee.mp4", "penguin.mp4", "perky.mov", "piano.mp4", "pipe.mov", "pop.mp4", "roblonk.mp4", "shampoo.mov", "sus.mp4", "ups.mp4", "video.mp4", "yoshi.mp4"]
     var trollmessage = trollmessages[Math.floor(Math.random() * trollmessages.length)];
     var skilllevelmessage = skilllevelmessages[Math.floor(Math.random() * skilllevelmessages.length)];
-    var selectedvideo = possiblevideos[Math.floor(Math.random() * possiblevideos.length)];
     // alert("sus goofy ahh")
     document.getElementsByTagName("title")[0].innerHTML = "sus goofy ahh";
-    document.getElementsByTagName("video")[0].src = "videos/" + selectedvideo;
     document.getElementsByTagName("video")[0].play();
     var messages = [
         "you rn: ".concat(trollmessage),
