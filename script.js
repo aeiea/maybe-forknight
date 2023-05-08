@@ -57,6 +57,7 @@ async function get_rekt() {
     document.getElementById('trolled_lol').classList.remove("hidden");
     var possiblevideos = await fetch('/videos.txt').then(result => result.split(','));
     var selectedvideo = possiblevideos[Math.floor(Math.random() * possiblevideos.length)];
+    console.log(possiblevideos);
     document.getElementsByTagName("video")[0].src = "videos/" + selectedvideo;
     /*
     GUIDE FOR ACTUALLY LOGGING IP ADDRESSES
