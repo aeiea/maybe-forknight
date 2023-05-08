@@ -19,5 +19,5 @@ subprocess.run("git clone --depth=1 " + repo_to_update + " thisfolderisgoingtobe
 files = [f for f in os.listdir("thisfolderisgoingtobedeleted/" + folder_to_check_for_updates + "/") if os.path.isfile(os.path.join("thisfolderisgoingtobedeleted/" + folder_to_check_for_updates + "/", f))]
 shutil.rmtree("thisfolderisgoingtobedeleted")
 thingtoedit = open(file_to_update, "w")
-thingtoedit.write(str(files))
+thingtoedit.write(str(",".join(files)))
 thingtoedit.close()
