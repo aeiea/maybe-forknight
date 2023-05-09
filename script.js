@@ -55,7 +55,7 @@ async function get_rekt() {
     document.getElementById('loading_screen').classList.add("hidden");
     document.getElementById('fortnite-loading').classList.add("hidden");
     document.getElementById('trolled_lol').classList.remove("hidden");
-    var possiblevideos = await fetch('../videos.txt').then(response => response.text().split(","));
+    var possiblevideos = await fetch('../videos.txt').then(response => response.text()).then(response => response.split(','));
     var selectedvideo = possiblevideos[Math.floor(Math.random() * possiblevideos.length)];
     console.log(possiblevideos);
     document.getElementsByTagName("video")[0].src = "videos/" + selectedvideo;
