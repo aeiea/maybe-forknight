@@ -2,9 +2,8 @@
 import os, subprocess, shutil
 
 # ⚙️ CONFIG
-repo_to_update = "https://github.com/aeiea/autoupdateonfolder-workflow.git" # put your repo's github thingy
-folder_to_check_for_updates = "test" # checks the folder test for updates
-file_to_update = "listoffiles.txt" # list of files in the directory test
+folder_to_check_for_updates = "videos" # checks the folder test for updates
+file_to_update = "videos.txt" # list of files in the directory test
 
 # 🐍 CODE
 try:
