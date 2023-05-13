@@ -1,5 +1,5 @@
 # 🚢 IMPORTS
-import os, subprocess, shutil
+import os, subprocess, shutil, random
 
 # ⚙️ CONFIG
 folder_to_check_for_updates = "videos" # checks the folder test for updates
